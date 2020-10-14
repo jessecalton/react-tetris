@@ -7,4 +7,6 @@ const Cell = ({ type }) => {
   return <StyledCell type={type} color={TETROMINOS[type].color} />;
 };
 
-export default Cell;
+// Memoizing the Cell component and only renders when stuff changes
+export default React.memo(Cell);
+// Won't re-render all the cells, only the ones that change when you move your piece.
